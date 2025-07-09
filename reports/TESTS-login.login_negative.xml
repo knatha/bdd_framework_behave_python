@@ -1,0 +1,14 @@
+<testsuite name="login.login_negative.Login functionality" tests="1" errors="0" failures="0" skipped="0" time="9.339175" timestamp="2025-07-08T15:57:54.659996" hostname="DESKTOP-S19J45O"><testcase classname="login.login_negative.Login functionality" name="User logs in with wrong password" status="passed" time="9.339175"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario: User logs in with wrong password
+    Given the user is on the saucedemo login page ... passed in 5.044s
+    When the user logs in with username "standard_user" and password "wrong_pass" ... passed in 1.070s
+    Then the user should see an error message ... passed in 3.225s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
