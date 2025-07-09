@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"188357eda975c95318be33c4a6155bd8","name":"Login functionality","statistic":{"failed":0,"broken":2,"skipped":0,"passed":0,"unknown":0,"total":2}}]}
+{"total":2,"items":[{"uid":"9153afc26e915fa79afaa0ff68f568b7","name":"Login functionality on saucedemo","statistic":{"failed":0,"broken":9,"skipped":0,"passed":0,"unknown":0,"total":9}},{"uid":"188357eda975c95318be33c4a6155bd8","name":"Login functionality","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
