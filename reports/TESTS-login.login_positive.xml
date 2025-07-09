@@ -1,14 +1,37 @@
-<testsuite name="login.login_positive.Login functionality" tests="1" errors="0" failures="0" skipped="0" time="6.36737" timestamp="2025-07-09T07:46:48.549509" hostname="DESKTOP-S19J45O"><testcase classname="login.login_positive.Login functionality" name="User logs in" status="passed" time="6.36737"><system-out>
+<testsuite name="login.login_positive.Login functionality on saucedemo" tests="2" errors="0" failures="0" skipped="0" time="15.838733" timestamp="2025-07-09T16:16:37.626783" hostname="DESKTOP-S19J45O"><testcase classname="login.login_positive.Login functionality on saucedemo" name="User logs in with different credentials -- @1.1 " status="passed" time="5.360086"><system-out>
 <![CDATA[
 @scenario.begin
 
   @smoke
-  Scenario: User logs in
-    Given the user is on the saucedemo login page ... passed in 3.149s
-    When the user logs in ... passed in 0.646s
-    Then the user should see the products page ... passed in 2.573s
+  Scenario Outline: User logs in with different credentials -- @1.1 
+    Given the user is on the saucedemo login page ... passed in 2.325s
+    When the user enters username "standard_user" and password "secret_sauce" ... passed in 0.594s
+    Then the user should see the products page ... passed in 2.441s
 
 @scenario.end
 --------------------------------------------------------------------------------
+
+Captured stdout:
+USERNAME: 'standard_user'
+PASSWORD: 'secret_sauce'
+
+]]>
+</system-out></testcase><testcase classname="login.login_positive.Login functionality on saucedemo" name="User logs in with different credentials -- @1.2 " status="passed" time="10.478647"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with different credentials -- @1.2 
+    Given the user is on the saucedemo login page ... passed in 2.630s
+    When the user enters username "performance_glitch_user" and password "secret_sauce" ... passed in 5.543s
+    Then the user should see the products page ... passed in 2.306s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+USERNAME: 'performance_glitch_user'
+PASSWORD: 'secret_sauce'
+
 ]]>
 </system-out></testcase></testsuite>

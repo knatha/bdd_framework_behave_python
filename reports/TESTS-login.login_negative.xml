@@ -1,14 +1,127 @@
-<testsuite name="login.login_negative.Login functionality" tests="1" errors="0" failures="0" skipped="0" time="7.855001" timestamp="2025-07-09T07:46:25.876341" hostname="DESKTOP-S19J45O"><testcase classname="login.login_negative.Login functionality" name="User logs in with wrong password" status="passed" time="7.855001"><system-out>
+<testsuite name="login.login_negative.Login functionality on saucedemo" tests="7" errors="0" failures="3" skipped="0" time="30.887315" timestamp="2025-07-09T16:15:49.012063" hostname="DESKTOP-S19J45O"><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.1 " status="passed" time="6.408663"><system-out>
 <![CDATA[
 @scenario.begin
 
   @smoke
-  Scenario: User logs in with wrong password
-    Given the user is on the saucedemo login page ... passed in 5.028s
-    When the user logs in with username "standard_user" and password "wrong_pass" ... passed in 0.453s
-    Then the user should see an error message ... passed in 2.375s
+  Scenario Outline: User logs in with invalid credentials -- @1.1 
+    Given the user is on the saucedemo login page ... passed in 3.260s
+    When the user enters username "standard_user" and password "wrong_pass" ... passed in 0.628s
+    Then the user should see an error message ... passed in 2.520s
 
 @scenario.end
 --------------------------------------------------------------------------------
+
+Captured stdout:
+USERNAME: 'standard_user'
+PASSWORD: 'wrong_pass'
+
+]]>
+</system-out></testcase><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.2 " status="passed" time="5.1875"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with invalid credentials -- @1.2 
+    Given the user is on the saucedemo login page ... passed in 2.286s
+    When the user enters username "locked_out_user" and password "secret_sauce" ... passed in 0.547s
+    Then the user should see an error message ... passed in 2.354s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+USERNAME: 'locked_out_user'
+PASSWORD: 'secret_sauce'
+
+]]>
+</system-out></testcase><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.3 " status="failed" time="2.928114"><failure type="NoneType" message="None">
+<![CDATA[
+Failing step: When the user enters username "" and password "secret_sauce" ... undefined in 0.000s
+Location: features/login/login_negative.feature:6
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with invalid credentials -- @1.3 
+    Given the user is on the saucedemo login page ... passed in 2.928s
+    When the user enters username "" and password "secret_sauce" ... undefined in 0.000s
+    Then the user should see an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.4 " status="failed" time="2.348515"><failure type="NoneType" message="None">
+<![CDATA[
+Failing step: When the user enters username "standard_user" and password "" ... undefined in 0.000s
+Location: features/login/login_negative.feature:6
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with invalid credentials -- @1.4 
+    Given the user is on the saucedemo login page ... passed in 2.349s
+    When the user enters username "standard_user" and password "" ... undefined in 0.000s
+    Then the user should see an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.5 " status="failed" time="2.756261"><failure type="NoneType" message="None">
+<![CDATA[
+Failing step: When the user enters username "" and password "" ... undefined in 0.000s
+Location: features/login/login_negative.feature:6
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with invalid credentials -- @1.5 
+    Given the user is on the saucedemo login page ... passed in 2.756s
+    When the user enters username "" and password "" ... undefined in 0.000s
+    Then the user should see an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.6 " status="passed" time="5.309491"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with invalid credentials -- @1.6 
+    Given the user is on the saucedemo login page ... passed in 2.451s
+    When the user enters username "!@#$%^&*()" and password "secret_sauce" ... passed in 0.478s
+    Then the user should see an error message ... passed in 2.380s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+USERNAME: '!@#$%^&*()'
+PASSWORD: 'secret_sauce'
+
+]]>
+</system-out></testcase><testcase classname="login.login_negative.Login functionality on saucedemo" name="User logs in with invalid credentials -- @1.7 " status="passed" time="5.948771"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: User logs in with invalid credentials -- @1.7 
+    Given the user is on the saucedemo login page ... passed in 3.174s
+    When the user enters username "standard_user" and password "!@#$%^&*()" ... passed in 0.477s
+    Then the user should see an error message ... passed in 2.297s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+USERNAME: 'standard_user'
+PASSWORD: '!@#$%^&*()'
+
 ]]>
 </system-out></testcase></testsuite>

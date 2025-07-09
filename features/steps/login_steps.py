@@ -15,12 +15,20 @@ def step_user_on_login_page(context):
 
 @when('the user logs in')
 def step_user_logs_in(context):
-    username = context.test_data[0]["username"]
-    password = context.test_data[0]["password"]
+    with open('config/test_data.json') as f:
+        test_data = json.load(f)
+    username = test_data[0]["username"].strip()
+    password = test_data[0]["password"].strip()
     context.login_page.login(username, password)
 
-@when('the user logs in with username "{username}" and password "{password}"')
-def step_user_logs_in_with_params(context, username, password):
+@when('the user enters username "{username}" and password "{password}"')
+def step_user_enters_credentials(context, username, password):
+    username = username.strip() if username else ""
+    password = password.strip() if password else ""
+    
+    print(f"USERNAME: '{username}'")
+    print(f"PASSWORD: '{password}'")
+
     context.login_page.login(username, password)
 
 @then('the user should see the products page')
@@ -37,7 +45,7 @@ def step_user_sees_error(context):
     try:
         error_element = WebDriverWait(context.driver, 5).until(
             EC.visibility_of_element_located(
-                (By.XPATH, "//h3[contains(@data-test,'error')]")
+                (By.XPATH, "//h3[contains(@data-test,\"error\")]")
             )
         )
         error_text = error_element.text
