@@ -25,26 +25,22 @@ jobs:
           pip install -r requirements.txt
           pip install allure-behave
 
-      - name: Install Chrome
+      - name: Install Allure CLI
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget gnupg unzip
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+          sudo apt-get install -y allure
 
       - name: Run parallel tests
         run: |
           python run_parallel.py
 
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results
-          path: allure-results
+      - name: Generate Allure Report
+        run: |
+          allure generate allure-results -o allure-report --clean
 
-      - name: Publish Allure Report
-        uses: simple-elf/allure-report-action@v1
+      - name: Deploy Allure Report to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          allure_results: allure-results
-          allure_report: allure-report
-          gh_pages: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          publish_branch: gh-pages
