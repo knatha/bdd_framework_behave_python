@@ -1,12 +1,12 @@
-<testsuite name="login.login_positive.Login functionality" tests="1" errors="0" failures="0" skipped="0" time="9.330408" timestamp="2025-07-08T15:57:54.586150" hostname="DESKTOP-S19J45O"><testcase classname="login.login_positive.Login functionality" name="User logs in" status="passed" time="9.330408"><system-out>
+<testsuite name="login.login_positive.Login functionality" tests="1" errors="0" failures="0" skipped="0" time="6.36737" timestamp="2025-07-09T07:46:48.549509" hostname="DESKTOP-S19J45O"><testcase classname="login.login_positive.Login functionality" name="User logs in" status="passed" time="6.36737"><system-out>
 <![CDATA[
 @scenario.begin
 
   @smoke
   Scenario: User logs in
-    Given the user is on the saucedemo login page ... passed in 5.888s
-    When the user logs in ... passed in 0.806s
-    Then the user should see the products page ... passed in 2.637s
+    Given the user is on the saucedemo login page ... passed in 3.149s
+    When the user logs in ... passed in 0.646s
+    Then the user should see the products page ... passed in 2.573s
 
 @scenario.end
 --------------------------------------------------------------------------------

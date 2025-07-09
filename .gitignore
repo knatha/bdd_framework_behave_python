@@ -1,0 +1,18 @@
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Allure results and reports
+allure-results/
+allure-report/
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

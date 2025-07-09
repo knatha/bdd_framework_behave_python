@@ -1,11 +1,16 @@
 Feature: Login functionality # features/login/login_negative.feature:1
 
   @smoke
+  Scenario: User logs in with wrong password                                      # features/login/login_negative.feature:4
+    Given the user is on the saucedemo login page                                 # features/steps/login_steps.py:10
+    When the user logs in with username "standard_user" and password "wrong_pass" # features/steps/login_steps.py:22
+    Then the user should see an error message                                     # features/steps/login_steps.py:35
+
+Feature: Login functionality # features/login/login_positive.feature:1
+
+  @smoke
   Scenario: User logs in                          # features/login/login_positive.feature:4
     Given the user is on the saucedemo login page # features/steps/login_steps.py:10
     When the user logs in                         # features/steps/login_steps.py:16
     Then the user should see the products page    # features/steps/login_steps.py:26
-
-.py:22
-    Then the user should see an error message                                     # features/steps/login_steps.py:35
 

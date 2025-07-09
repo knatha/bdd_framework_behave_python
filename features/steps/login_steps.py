@@ -41,12 +41,10 @@ def step_user_sees_error(context):
             )
         )
         error_text = error_element.text
-    except Exception:
-        error_text = ""
-    
-    if "Epic sadface" not in error_text:
+    except Exception as e:
         screenshot = context.driver.get_screenshot_as_png()
         allure.attach(screenshot, name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
+        raise e
 
     assert "Epic sadface" in error_text, "Error message not displayed!"
     context.driver.quit()

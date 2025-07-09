@@ -1,0 +1,1 @@
+[{"uid":"636aa308536ca6a5","name":"User logs in","time":{"start":1752061585881,"stop":1752061608548,"duration":22667},"status":"passed","severity":"normal"},{"uid":"d21d4398ab6a26a6","name":"User logs in with wrong password","time":{"start":1752061561782,"stop":1752061585874,"duration":24092},"status":"passed","severity":"normal"}]
