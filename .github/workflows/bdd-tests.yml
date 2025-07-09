@@ -47,3 +47,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
           publish_branch: gh-pages
+          user_name: knatha
+          user_email: kamal.natha@gmail.com
